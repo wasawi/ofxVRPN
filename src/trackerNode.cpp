@@ -1,18 +1,18 @@
-#include "tracker.h"
+#include "trackerNode.h"
 
 //--------------------------------------------------------------
-tracker::tracker() {
+trackerNode::trackerNode() {
 
-	position= ofVec3f(-30,-600,0);			// Some values in case there is no tracker
+	position= ofVec3f(0,0,0);
 	angle	= tilt = pan = roll = 0;		
-	scale	= 2;							
+	scale	= 1;
 	target.setParent(*this);
-	target.setPosition(.33,0,0);			//	target.setPosition(.33,0,0);
+	target.setPosition(0,0,0);
 	initParent();
 }
 
 //--------------------------------------------------------------
-void tracker::customDraw() {
+void trackerNode::customDraw() {
 
 //	parent.draw();
 //	ofDrawAxis(.2);
@@ -34,7 +34,7 @@ void tracker::customDraw() {
 }
 
 //--------------------------------------------------------------
-void tracker::initParent() {
+void trackerNode::initParent() {
 	parent.resetTransform();
 
 	parent.setPosition(position);
@@ -46,66 +46,66 @@ void tracker::initParent() {
 }
 
 //--------------------------------------------------------------
-void tracker::setTilt(float v) {
+void trackerNode::setTilt(float v) {
 	tilt=v;
 	cout << "tilt" << tilt << endl;	
 	initParent();
 }
 
 //--------------------------------------------------------------
-void tracker::setPan(float v) {
+void trackerNode::setPan(float v) {
 	pan=v;
 	cout << "pan" << pan << endl;	
 	initParent();
 }
 
 //--------------------------------------------------------------
-void tracker::setRoll(float v) {
+void trackerNode::setRoll(float v) {
 	roll=v;
 	cout << "roll" << roll << endl;	
 	initParent();
 }
 
 //--------------------------------------------------------------
-void tracker::setAngle(float v) {
+void trackerNode::setAngle(float v) {
 	angle=v;
 	cout << "angle" << angle << endl;	
 	initParent();
 }
 
 //--------------------------------------------------------------
-void tracker::setScale(float v) {
+void trackerNode::setScale(float v) {
 	scale=v;
 	cout << "scale" << scale << endl;	
 	initParent();
 }
 
 //--------------------------------------------------------------
-float tracker::getTilt() {
+float trackerNode::getTilt() {
 	return tilt;
 	cout << "tilt" << tilt << endl;	
 }
 
 //--------------------------------------------------------------
-float tracker::getPan() {
+float trackerNode::getPan() {
 	return pan;
 	cout << "pan" << pan << endl;		
 }
 
 //--------------------------------------------------------------
-float tracker::getRoll() {
+float trackerNode::getRoll() {
 	return roll;
 	cout << "roll" << roll << endl;		
 }
 
 //--------------------------------------------------------------
-float tracker::getAngle() {
+float trackerNode::getAngle() {
 	return angle;
 	cout << "angle" << angle << endl;		
 }
 
 //--------------------------------------------------------------
-float tracker::getScale() {
+float trackerNode::getScale() {
 	return scale;
 }
 	

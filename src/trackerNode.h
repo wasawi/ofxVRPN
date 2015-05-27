@@ -3,10 +3,10 @@
 #include "ofMain.h"
 #include "ofNode.h"
 
-class tracker : public ofNode
+class trackerNode : public ofNode
 {
 public:
-	tracker();
+	trackerNode();
 	void customDraw();
 	void drawBox();
 	void initParent();
